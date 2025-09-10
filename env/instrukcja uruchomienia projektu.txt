@@ -1,0 +1,18 @@
+Aby uruchomić projekt, wymagane jest środowisko python.
+
+folder env najprościej jest umieścić bezpośrednio na dysku C:
+
+Następnie otwrozyć cmd
+
+wpisujemy 
+
+cd..
+cd..
+//Aby cofnąć się do katalogu c:
+cd env
+cd src
+python manage.py runserver
+
+otwieramy przeglądarkę i wpisujemy adres :
+
+http://127.0.0.1:8000

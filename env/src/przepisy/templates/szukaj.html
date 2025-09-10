@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+<style>
+body{
+   margin: 0;
+   background-image: url("{% static 'images/bg.jpg' %}");
+   background-repeat:no-repeat;
+   background-attachment:fixed;
+   background-position:100% 100%;
+   min-height:100%;
+   min-width:100%;
+   background-size:cover;
+}
+</style>
+
+<!-- Nazwa strony na karcie w przeglądarce-->
+    <title>Recepty na Smak - Szukaj</title>
+    <link rel="Stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <meta charset="UTF-8">
+          <!-- Odnośnik do osobnego pliku .css-->
+        
+          
+   </head>
+<!-- Znacznik body wraz z tłem dla całej strony-->
+  <body>
+<!-- Kartonik zbiorczy mniejszych sekcji-->
+<div id="box">
+     <div id="gora">
+          <!-- Klasa-->
+         <div class="Nawigacja">
+               <hr>
+               <a href="{% url 'szukaj' %}">Szukaj Przepisu</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'index' %}">Strona Główna</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'lista' %}">Lista Przepisów</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'uzytkownicy' %}">Użytkownicy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'dodaj' %}">Dodaj Przepis!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             </div>
+        </div>
+
+<!-- Środkowa część strony czyli przepisy wlasciwe, odświeżać się będzie w zależności od wybranego linku w nawigacji-->
+          <div id="Srodek">
+Szukaj Przepisu w oparciu o filtry umieszczone poniżej.<br> 
+
+<a href="{% url 'mieso' %}">Przepisy zawierające Mięso</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="{% url 'weganskie' %}">Przepisy Wegańskie</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="{% url 'wegetarianskie' %}">Przepisy Wegetariańskie</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="{% url 'jarskie' %}">Przepisy Jarskie</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="{% url 'bezglutenowe' %}">Przepisy Bezglutenowe</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+
+
+</div>
+
+
+
+<!-- Prawa część strony-->
+          
+
+    
+<div id="Prawy">
+        
+          <a href="{% url 'dodaj' %}">
+          <input style="font-size : 1vw" name="" id="" type="button" value="Dodaj Przepis!">
+          </a>
+          <br>
+          </div>
+ </div>
+
+  </body>
+</html>
+

@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+<style>
+body{
+   margin: 0;
+   background-image: url("{% static 'images/bg.jpg' %}");
+   background-repeat:no-repeat;
+   background-attachment:fixed;
+   background-position:100% 100%;
+   min-height:100%;
+   min-width:100%;
+   background-size:cover;
+}
+</style>
+
+<!-- Nazwa strony na karcie w przeglądarce-->
+    <title>Recepty na Smak - Szukaj</title>
+    <link rel="Stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <meta charset="UTF-8">
+          <!-- Odnośnik do osobnego pliku .css-->
+        
+          
+   </head>
+<!-- Znacznik body wraz z tłem dla całej strony-->
+  <body>
+<!-- Kartonik zbiorczy mniejszych sekcji-->
+<div id="box">
+     <div id="gora">
+          <!-- Klasa-->
+         <div class="Nawigacja">
+               <hr>
+               <a href="{% url 'szukaj' %}">Szukaj Przepisu</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'index' %}">Strona Główna</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'lista' %}">Lista Przepisów</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'uzytkownicy' %}">Użytkownicy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="{% url 'dodaj' %}">Dodaj Przepis!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             </div>
+        </div>
+
+<!-- Środkowa część strony czyli przepisy wlasciwe, odświeżać się będzie w zależności od wybranego linku w nawigacji-->
+          <div id="Srodek">
+<h1>Lista Przepisów</h1><br>
+      <table border="1">
+          <tr>
+            <th>Id Przepisu&nbsp;</th>
+            <th>Nazwa Dania&nbsp;</th>
+            <th>Autor Przepisu&nbsp;</th>
+            <th>Rodzaj Kuchni&nbsp;</th>
+            <th>Produkty&nbsp;</th>
+            <th>Przepis Dania&nbsp;</th>
+          </tr>
+          
+      {% for Przepisy in lista_przepisow  %}
+      {% if Przepisy.RodzajKuchni == 'Jarskie' %}
+      <tr>
+      <td>{{ Przepisy.IdPrzepisu }}</td>
+      <td>{{ Przepisy.NazwaDania }}</td>
+      <td>{{ Przepisy.AutorPrzepisu }}</td>
+      <td>{{ Przepisy.RodzajKuchni }}</td>
+      <td>{{ Przepisy.Produkty }}</td>
+      <td>{{ Przepisy.PrzepisDania }}</td>
+      </tr>
+          {% endif %}
+          {% endfor %}
+       </table>   
+
+</div>
+
+
+
+<!-- Prawa część strony-->
+          
+
+    
+<div id="Prawy">
+        
+          <a href="{% url 'dodaj' %}">
+          <input style="font-size : 1vw" name="" id="" type="button" value="Dodaj Przepis!">
+          </a>
+          <br>
+          </div>
+ </div>
+
+  </body>
+</html>
+

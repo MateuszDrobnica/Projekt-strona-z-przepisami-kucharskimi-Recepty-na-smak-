@@ -1,0 +1,60 @@
+@charset "UTF-8";
+input[type='number']{
+    width: 5vw;
+} 
+
+
+#box {
+   width: 100vw;
+   height: 100vh;
+   float:left;
+}
+   #gora{      
+   width: 100vw;
+   height: 5vh;
+   float:left;
+   }
+
+      .Nawigacja {
+         width: 100vw;
+         height: 5vh;
+         float: left;
+         opacity: 1;
+         position: fixed;
+         background: #FFCCCB;
+         font-size: 1vw;
+      }
+
+   #Skladniki {
+      width: 10vw;
+      height: 25vh;
+      float: left;
+      opacity: 0.9;
+      position:fixed;
+      background: #FFFDD0;
+      font-size: 1vw; 
+      margin-top: 5vh;
+   }
+
+   #Srodek {
+      width: 80vw;
+      height: auto;
+      float: left;
+      background: white;
+      font-size: 1vw;
+      margin-left: 10vw;
+      margin-right: 10vw;
+      text-align: center;
+      
+   }
+
+   #Prawy {
+      opacity: 0.9;
+      background: #F9F9E0;
+      width: 10vw;
+      float: left;
+      margin-left: 90vw;
+      font-size: 1vw;
+      position:fixed;
+      margin-top: 5vh;
+   }
